@@ -34,7 +34,7 @@ This project provides:
 </p>
 ### Conceptual Schema
 <p float="left">
-  <img src="images/conceptual_schema.png" width="300" />
+  <img src="images/final_conceptual_schema.png" width="300" />
 </p>
 
 3. **ETL Orchestration (Apache Airflow)**
