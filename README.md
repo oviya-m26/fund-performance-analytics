@@ -53,7 +53,12 @@ This project provides:
 4. **Analytics**
    - Compare **mutual fund NAVs vs. benchmark returns** in real time.  
    - Track **historical performance** trends.  
-   - Enable dashboards for visualization and insights.  
+   -
+<p float="left">
+  <img src="images/benchmark_growth_pct.png" width="200" />
+  <img src="images/growth_pct_graph.png" width="200" />
+  <img src="images/final_output.png" width="200" />
+</p> Enable dashboards for visualization and insights.  
 
 - `mutual_fund_company` & `mutual_fund_scheme` → Fund houses and their schemes  
 - `benchmark_index` & `benchmark_history` → Index values and their history  
