@@ -54,15 +54,17 @@ This project provides:
    - Compare **mutual fund NAVs vs. benchmark returns** in real time.  
    - Track **historical performance** trends.  
    -
+## Snowflake Charts / Dashboards
+
 <p float="left">
   <img src="images/benchmark_growth_pct.png" width="200" />
   <img src="images/growth_pct_graph.jpg" width="200" />
-  <img src="images/final_output.jpg" width="200" />
-</p> Enable dashboards for visualization and insights.  
+</p>
 
-- `mutual_fund_company` & `mutual_fund_scheme` → Fund houses and their schemes  
-- `benchmark_index` & `benchmark_history` → Index values and their history  
-- `scheme_benchmark_mapping` → Links schemes to benchmarks  
-- `etl_audit` → Logs ETL metadata  
+<p>
+  <img src="images/final_output.jpg" width="600" />
+</p>
 
-![Database Schema Diagram]
+**Figure:** Moneycontrol-like comparison graph showing fund performance vs benchmark.
+
+
