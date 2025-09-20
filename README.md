@@ -53,7 +53,4 @@ The Snowflake schema consists of the following entities:
 - `scheme_benchmark_mapping` → Links schemes to benchmarks  
 - `etl_audit` → Logs ETL metadata  
 
-![Database Schema Diagram]("C:\Users\ADMIN\Desktop\report\logical_schema.png")
-
-
-## 📂 Project Structure
+![Database Schema Diagram]
