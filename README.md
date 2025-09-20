@@ -28,6 +28,10 @@ This project provides:
    - `benchmark_index` & `benchmark_history` → Benchmarks and historical values.  
    - `scheme_benchmark_mapping` → Links schemes to benchmarks.  
    - `etl_audit` → Logs ETL run metadata.
+### Logical Schema
+<p float="left">
+  <img src="images/logical_schema.png" width="300" />
+</p>
 
 3. **ETL Orchestration (Apache Airflow)**
    - DAG scheduled to run daily at **6:00 AM IST**.  
@@ -42,12 +46,6 @@ This project provides:
    - Track **historical performance** trends.  
    - Enable dashboards for visualization and insights.  
 
----
-## 🗄️ Database Design
-The Snowflake schema consists of the following entities:  
-
-- `current_nav` → Latest NAV values per scheme  
-- `nav_history` → Daily NAV history for each scheme  
 - `mutual_fund_company` & `mutual_fund_scheme` → Fund houses and their schemes  
 - `benchmark_index` & `benchmark_history` → Index values and their history  
 - `scheme_benchmark_mapping` → Links schemes to benchmarks  
