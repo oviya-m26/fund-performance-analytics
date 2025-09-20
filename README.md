@@ -32,6 +32,7 @@ This project provides:
 <p float="left">
   <img src="images/logical_schema.png" width="300" />
 </p>
+
 ### Conceptual Schema
 <p float="left">
   <img src="images/final_conceptual_schema.png" width="300" />
@@ -43,7 +44,11 @@ This project provides:
      - Extract NAV data → Load into `current_nav` → Update `nav_history`.  
      - Fetch & update benchmark data.  
      - Run fund vs. benchmark comparison queries.  
-     - Log ETL metadata into `etl_audit`.  
+     - Log ETL metadata into `etl_audit`.
+<p float="left">
+  <img src="images/dag_flow_in_dag_tasks.png" width="600" />
+</p>
+
 
 4. **Analytics**
    - Compare **mutual fund NAVs vs. benchmark returns** in real time.  
