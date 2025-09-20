@@ -56,8 +56,8 @@ This project provides:
    -
 <p float="left">
   <img src="images/benchmark_growth_pct.png" width="200" />
-  <img src="images/growth_pct_graph.png" width="200" />
-  <img src="images/final_output.png" width="200" />
+  <img src="images/growth_pct_graph.jpg" width="200" />
+  <img src="images/final_output.jpg" width="200" />
 </p> Enable dashboards for visualization and insights.  
 
 - `mutual_fund_company` & `mutual_fund_scheme` → Fund houses and their schemes  
