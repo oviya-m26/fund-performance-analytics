@@ -1,0 +1,80 @@
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta
+import os
+import mysql.connector
+
+default_args = {
+    'owner': 'admin',
+    'depends_on_past': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+}
+
+def load_nav_to_mysql():
+    folder = "C:/Users/ADMIN/Desktop/NAV data"
+
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",  
+        password="Smart12#", 
+        database="db"
+    )
+    cursor = conn.cursor()
+
+    for filename in os.listdir(folder):
+        if filename.startswith("mf_") and filename.endswith(".txt"):
+            amc_code = int(filename.split("_")[1].split(".")[0])
+            file_path = os.path.join(folder, filename)
+
+            batch_data = []
+
+            with open(file_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    parts = [p.strip() for p in line.split(";")]
+                    if len(parts) < 5 or parts[0] == 'Scheme Code':
+                        continue
+                    try:
+                        scheme_code = int(parts[0])
+                        scheme_name = parts[3]
+                        nav_date = datetime.strptime(parts[-1], "%d-%b-%Y").date()
+                        nav = float(parts[4]) if parts[4] else None
+                        repurchase = float(parts[5]) if len(parts) > 5 and parts[5] else None
+                        sale = float(parts[6]) if len(parts) > 6 and parts[6] else None
+
+                        batch_data.append((
+                            scheme_code, scheme_name, nav_date, nav,
+                            repurchase, sale, amc_code
+                        ))
+                    except:
+                        pass
+
+            if batch_data:
+                cursor.executemany("""
+                    INSERT INTO nav_history (
+                        scheme_code, scheme_name, nav_date, nav,
+                        repurchase_price, sale_price, amc_code
+                    ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """, batch_data)
+                conn.commit()
+                print(f"Inserted {len(batch_data)} rows from {filename}")
+
+    cursor.close()
+    conn.close()
+
+with DAG(
+    dag_id='load_nav_data_dag',
+    default_args=default_args,
+    description='Load NAV data into MySQL (optimized)',
+    schedule='@weekly',
+    start_date=datetime(2024, 1, 1),
+    catchup=False,
+    tags=['nav']
+) as dag:
+
+    load_nav = PythonOperator(
+        task_id='load_nav_data_task',
+        python_callable=load_nav_to_mysql
+    )
+
+    load_nav
