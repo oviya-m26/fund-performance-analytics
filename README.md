@@ -68,7 +68,7 @@ This project provides:
 **Figure:** Moneycontrol-like comparison graph showing fund performance vs benchmark.
 ## How to Run
 
-1. Clone the repo:
+Clone the repo:
    ```bash
    git clone https://github.com/oviya-m26/fund-performance-analytics.git
 
