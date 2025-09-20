@@ -46,7 +46,7 @@ This project provides:
      - Run fund vs. benchmark comparison queries.  
      - Log ETL metadata into `etl_audit`.
 <p float="left">
-  <img src="images/dag_flow_in_dag_tasks.png" width="600" />
+  <img src="images/data_flow_in_dag_tasks.png" width="600" />
 </p>
 
 
