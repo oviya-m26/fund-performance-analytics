@@ -1,0 +1,2 @@
+airflow/data/nav/*.txt filter=lfs diff=lfs merge=lfs -text
+airflow/logs/**/*.log filter=lfs diff=lfs merge=lfs -text
