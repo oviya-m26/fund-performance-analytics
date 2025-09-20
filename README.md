@@ -32,6 +32,10 @@ This project provides:
 <p float="left">
   <img src="images/logical_schema.png" width="300" />
 </p>
+### Conceptual Schema
+<p float="left">
+  <img src="images/conceptual_schema.png" width="300" />
+</p>
 
 3. **ETL Orchestration (Apache Airflow)**
    - DAG scheduled to run daily at **6:00 AM IST**.  
